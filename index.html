@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JAVASCRIPT PRACTICE by Vedat Sözen</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body class="h-screen">
+
+    <div id="ustbolum" class="h-2/3 w-screen bg-black flex justify-center items-center">
+        <div class="m-auto h-fit w-fit p-3">
+        <h1 id="yazi1">Practicing Javascript</h1>
+        <h1 id="yazi2">HTML, CSS, TAILWIND CSS, JAVASCRIPT, JQUERY</h1>
+        </div>
+    </div>
+
+    <div id="photos" class="h-1/3 w-screen border-3 border-lime-400 flex flex-row justify-center items-center">
+        <img id="img1" src="images/bir.jpg" class="img h-full w-1/5">
+        <img id="img2" src="images/iki.jpg" class="img h-full w-1/5">
+        <img id="img3" src="images/uc.jpg" class="img h-full w-1/5">
+        <img id="img4" src="images/dort.jpg" class="img h-full w-1/5">
+        <img id="img5" src="images/bes.jpg" class="img h-full w-1/5">
+    </div>
+
+    <script>
+
+        let yazilar = [
+            {
+                yazi:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla velit eget enim condimentum, quis hendrerit mauris commodo. Praesent sodales maximus massa, eu ultricies mi tempus ac. ",
+                yazi2: "Donec ultrices nisl quis felis varius, at cursus orci pulvinar. Cras hendrerit porta eros id consequat. Donec id laoreet nunc. "
+            }
+            ,
+            {
+                yazi:"Aenean bibendum vestibulum risus, porttitor volutpat metus feugiat nec. Integer elementum est risus, ac egestas sem auctor sodales. ",
+                yazi2:"Quisque euismod dolor id odio gravida, vitae luctus ipsum tincidunt. "
+            }
+            ,
+            {
+                yazi:"Curabitur semper magna velit, eget efficitur diam rutrum eget. Quisque ipsum orci, tincidunt et interdum in, hendrerit a urna. ",
+                yazi2: "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+            }
+            ,
+            {
+                yazi:"Sed at dictum justo. Integer accumsan, nulla vel fringilla luctus, quam lacus fermentum nisi, non finibus mi augue a tellus. ",
+                yazi2:"Pellentesque erat ligula, ullamcorper a maximus vel, vulputate a libero. Morbi et ante in orci ornare tincidunt."
+            }
+            ,
+            {
+                yazi:"Aenean mollis nibh eros, ut imperdiet turpis ornare vel. Morbi ac rhoncus massa, ac ullamcorper dui. Morbi tincidunt fermentum eros, at aliquet nulla ultrices sed.",
+                yazi2: "Cras finibus felis ac magna placerat, eget cursus urna accumsan. Donec et neque ac nunc dapibus rutrum. "
+            }
+        ]
+
+        $(document).ready(function () {
+
+                let ustbolum = document.getElementById("ustbolum");
+                let yazi1 = document.getElementById("yazi1");
+                let yazi2 = document.getElementById("yazi2");
+                let img1 = document.getElementById("img1");
+                let img2 = document.getElementById("img2");
+                let img3 = document.getElementById("img3");
+                let img4 = document.getElementById("img4");
+                let img5 = document.getElementById("img5");
+             
+
+            $(".img").click(function () {
+                $(this).addClass("border-4 border-slate-500");
+                let value = $(this).val;
+                alert(value);
+                $(".img").not(this).removeClass("border-4 border-slate-500");
+                let imagesrc = $(this).attr("src");
+                ustbolum.style.backgroundImage = "url(" + imagesrc + ")";
+                ustbolum.style.backgroundSize = "100% 100%";
+                ustbolum.style.backgroundRepeat = "no-repeat";
+
+            });
+            
+            img1.addEventListener("click", function() {
+            yazi1.innerHTML = yazilar[0].yazi;
+            yazi2.innerHTML = yazilar[0].yazi2;
+            })
+
+            img2.addEventListener("click", function() {
+            yazi1.innerHTML = yazilar[1].yazi;
+            yazi2.innerHTML = yazilar[1].yazi2;
+            })
+
+            img3.addEventListener("click", function() {
+            yazi1.innerHTML = yazilar[2].yazi;
+            yazi2.innerHTML = yazilar[2].yazi2;
+            })
+
+            img4.addEventListener("click", function() {
+            yazi1.innerHTML = yazilar[3].yazi;
+            yazi2.innerHTML = yazilar[3].yazi2;
+            })
+
+            img5.addEventListener("click", function() {
+            yazi1.innerHTML = yazilar[4].yazi;
+            yazi2.innerHTML = yazilar[4].yazi2;
+            })
+          
+        });
+    </script>
+</body>
+
+</html>

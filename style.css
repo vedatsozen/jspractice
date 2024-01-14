@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+body {
+    text-align: center;
+    padding: 0px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    cursor: pointer;
+}
+
+#ustbolum {
+    background-image: url("images/bir.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+h1#yazi1 {
+    margin: auto;
+    font-size:20px;
+    letter-spacing: 4px;
+    color: white;
+    width: 80%;
+    animation:fadeinout 2000ms linear infinite;
+}
+
+h1#yazi2 {
+    margin: auto;
+    margin-top: 30px;
+    font-size:12px;
+    letter-spacing: 4px;
+    background-color: none;
+    color: white;
+    width: fit-content;
+    padding: 5px;
+    animation: changecolor 10000ms linear infinite;
+}
+
+@keyframes fadeinout {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes changecolor {
+    0% {
+        background-color: none;
+        color: white;
+    }
+    50% {
+        background-color: white;
+        color: black;
+    }
+    100% {
+        background-color: none;
+        color: white;
+    }
+}
